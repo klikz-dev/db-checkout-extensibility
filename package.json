@@ -1,0 +1,20 @@
+{
+  "name": "db-checkout-extensibility",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "shopify": "shopify",
+    "build": "shopify app build",
+    "dev": "shopify app dev",
+    "info": "shopify app info",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy"
+  },
+  "dependencies": {
+    "@shopify/app": "^3",
+    "@shopify/cli": "^3"
+  },
+  "description": "This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) that includes no app home UI. It contains the basics for building a Shopify app that uses only app extensions.",
+  "main": "index.js",
+  "author": ""
+}
