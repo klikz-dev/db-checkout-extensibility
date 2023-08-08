@@ -1,13 +1,13 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-name = "db-checkout-extensibility"
-client_id = "f3bc460c3142d44b5882bb4cef78a8d1"
+name = "DB Checkout"
+client_id = "92a1b41af1e86b582b470b0b320f825c"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = ""
+scopes = "read_customers,read_products"
 
 [auth]
 redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
@@ -17,6 +17,3 @@ api_version = "2023-07"
 
 [pos]
 embedded = false
-
-[build]
-dev_store_url = "db-checkout-ext.myshopify.com"

@@ -13,16 +13,11 @@
   "dependencies": {
     "@shopify/app": "^3",
     "@shopify/cli": "^3",
-    "@shopify/shopify_function": "0.1.0",
     "@shopify/ui-extensions": "2023.7.x",
     "@shopify/ui-extensions-react": "2023.7.x",
-    "javy": "0.1.1",
     "react": "^17.0.0"
   },
   "description": "This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) that includes no app home UI. It contains the basics for building a Shopify app that uses only app extensions.",
   "main": "index.js",
-  "author": "",
-  "resolutions": {
-    "@types/react": "17.0.30"
-  }
+  "author": "Murrell Johnson"
 }
