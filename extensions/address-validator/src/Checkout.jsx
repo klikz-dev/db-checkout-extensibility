@@ -31,6 +31,25 @@ function Extension() {
           ],
         };
       } else if (
+        address?.address1?.toLowerCase()?.includes('po') ||
+        address?.address1?.toLowerCase()?.includes('p.o')
+      ) {
+        return {
+          behavior: 'block',
+          reason: 'Invalid shipping address',
+          errors: [
+            {
+              message: 'We can not ship to a PO Box.',
+              // Show an error underneath the country code field
+              target: '$.cart.deliveryGroups[0].deliveryAddress.address1',
+            },
+            {
+              // In addition, show an error at the page level
+              message: 'Please use a different address.',
+            },
+          ],
+        };
+      } else if (
         address?.address2?.toLowerCase()?.includes('po') ||
         address?.address2?.toLowerCase()?.includes('p.o')
       ) {
