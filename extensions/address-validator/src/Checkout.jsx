@@ -31,8 +31,10 @@ function Extension() {
           ],
         };
       } else if (
-        address?.address1?.toLowerCase()?.includes('po') ||
-        address?.address1?.toLowerCase()?.includes('p.o')
+        address?.address1?.toLowerCase()?.includes('post box') ||
+        address?.address1?.toLowerCase()?.includes('p.o.') ||
+        address?.address1?.toLowerCase()?.includes('post office') ||
+        address?.address1?.toLowerCase()?.includes('po box')
       ) {
         return {
           behavior: 'block',
@@ -50,8 +52,10 @@ function Extension() {
           ],
         };
       } else if (
-        address?.address2?.toLowerCase()?.includes('po') ||
-        address?.address2?.toLowerCase()?.includes('p.o')
+        address?.address2?.toLowerCase()?.includes('post box') ||
+        address?.address2?.toLowerCase()?.includes('p.o.') ||
+        address?.address2?.toLowerCase()?.includes('post office') ||
+        address?.address2?.toLowerCase()?.includes('po box')
       ) {
         return {
           behavior: 'block',
