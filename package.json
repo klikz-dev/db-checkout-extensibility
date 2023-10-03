@@ -13,7 +13,7 @@
   "dependencies": {
     "@shopify/app": "^3",
     "@shopify/cli": "^3",
-    "@shopify/ui-extensions": "2023.7.x",
+    "@shopify/ui-extensions": "2023.10.x",
     "@shopify/ui-extensions-react": "2023.7.x",
     "react": "^17.0.0"
   },
