@@ -2,8 +2,8 @@ import {
   Banner,
   reactExtension,
   useCartLines,
-} from '@shopify/ui-extensions-react/checkout';
-import { useEffect, useState } from 'react';
+} from '@shopify/ui-extensions-react/checkout'
+import { useEffect, useState } from 'react'
 
 const euroBrands = [
   'Aldeco Fabric',
@@ -17,11 +17,7 @@ const euroBrands = [
   'Lelievre Fabric',
   'Lelievre Wallpaper',
   'MissoniHome Wallpaper',
-  'Nicolette Mayer Fabric',
-  'Nicolette Mayer Wallpaper',
   'Tassinari & Chatel Fabric',
-  'JF Fabrics Wallpaper',
-  'JF Fabrics Fabric',
   'Maxwell Wallpaper',
   'Maxwell Fabric',
   'Andrew Martin Fabric',
@@ -29,9 +25,6 @@ const euroBrands = [
   'Baker Lifestyle Fabric',
   'Baker Lifestyle Wallpaper',
   'Baker Lifestyle Trim',
-  'Brunschwig & Fils Fabric',
-  'Brunschwig & Fils Wallpaper',
-  'Brunschwig & Fils Trim',
   'Cole & Son Fabric',
   'Cole & Son Wallpaper',
   'Cole & Son Trim',
@@ -40,9 +33,6 @@ const euroBrands = [
   'G P & J Baker Trim',
   'Gaston Y Daniela Fabric',
   'Gaston Y Daniela Wallpaper',
-  'Lee Jofa Fabric',
-  'Lee Jofa Wallpaper',
-  'Lee Jofa Trim',
   'Lizzo Fabric',
   'Lizzo Wallpaper',
   'Mulberry Fabric',
@@ -68,7 +58,7 @@ const euroBrands = [
   'MindTheGap Fabric',
   'MindTheGap Pillow',
   'MindTheGap Wallpaper',
-];
+]
 
 function POBannerExtension() {
   return (
@@ -77,27 +67,27 @@ function POBannerExtension() {
       status={'warning'}
       collapsible={false}
     ></Banner>
-  );
+  )
 }
 
 function ShippingBannerExtension() {
-  const items = useCartLines();
+  const items = useCartLines()
 
-  const [euroBrand, setEuroBrand] = useState(false);
-  const [multiBrand, setMultiBrand] = useState(false);
+  const [euroBrand, setEuroBrand] = useState(false)
+  const [multiBrand, setMultiBrand] = useState(false)
 
   useEffect(() => {
     if (Array.isArray(items) && items?.length > 0) {
       /**
        * Check if Muti-brand
        */
-      const firstVendor = items[0].merchandise?.product?.vendor;
+      const firstVendor = items[0].merchandise?.product?.vendor
       if (
         !items.every(
           (item) => item.merchandise?.product?.vendor === firstVendor
         )
       ) {
-        setMultiBrand(true);
+        setMultiBrand(true)
       }
 
       /**
@@ -108,10 +98,10 @@ function ShippingBannerExtension() {
           euroBrands.includes(item.merchandise?.product?.vendor)
         )
       ) {
-        setEuroBrand(true);
+        setEuroBrand(true)
       }
     }
-  }, [items]);
+  }, [items])
 
   if (euroBrand || multiBrand) {
     return (
@@ -120,20 +110,20 @@ function ShippingBannerExtension() {
         status={'warning'}
         collapsible={false}
       ></Banner>
-    );
+    )
   }
 
-  return null;
+  return null
 }
 
 const poBanner = reactExtension(
   'purchase.checkout.delivery-address.render-before',
   () => <POBannerExtension />
-);
+)
 
 const shippingBanner = reactExtension(
   'purchase.checkout.shipping-option-list.render-before',
   () => <ShippingBannerExtension />
-);
+)
 
-export { poBanner, shippingBanner };
+export { poBanner, shippingBanner }
