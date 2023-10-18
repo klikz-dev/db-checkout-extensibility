@@ -18,8 +18,6 @@ const euroBrands = [
   'Lelievre Wallpaper',
   'MissoniHome Wallpaper',
   'Tassinari & Chatel Fabric',
-  'Maxwell Wallpaper',
-  'Maxwell Fabric',
   'Andrew Martin Fabric',
   'Andrew Martin Wallpaper',
   'Baker Lifestyle Fabric',
